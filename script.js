@@ -1,3 +1,9 @@
-const blackSquare = document.querySelectorAll('.color')[0];
+const paletteSquares = document.querySelectorAll('.color');
 
-blackSquare.classList.add('selected');
+paletteSquares[0].classList.add('selected');
+
+function squareSelected(event) {
+  event.target.classList.add('selected');
+}
+
+paletteSquares.addEventListener('click', squareSelected);
