@@ -1,21 +1,6 @@
 #color-palette {
   width: 100%;
 }
-.color:nth-of-type(1) {
-  background-color: black;
-}
-
-.color:nth-of-type(2) {
-  background-color: #297373;
-}
-
-.color:nth-of-type(3) {
-  background-color: #ff8552;
-}
-
-.color:nth-of-type(4) {
-  background-color: #e9d758;
-}
 
 .color {
   display: inline-block;
@@ -24,10 +9,30 @@
   border: 1px solid black;
 }
 
+.color:nth-of-type( 1 ) {
+  background-color: black;
+}
+
+.color:nth-of-type( 2 ) {
+  background-color: #297373;
+}
+
+.color:nth-of-type( 3 ) {
+  background-color: #ff8552;
+}
+
+.color:nth-of-type( 4 ) {
+  background-color: #e9d758;
+}
+
 .pixel {
   background-color: white;
   display: inline-block;
   width: 40px;
   height: 40px;
   border: 1px solid black;
+}
+
+.selected {
+  
 }
