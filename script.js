@@ -1,9 +1,13 @@
+/* eslint-disable no-restricted-syntax */
 const paletteSquares = document.querySelectorAll('.color');
 
 paletteSquares[0].classList.add('selected');
 
-function squareSelected(event) {
-  event.target.classList.add('selected');
-}
-
-paletteSquares.addEventListener('click', squareSelected);
+paletteSquares.forEach((item) => {
+  item.addEventListener('click', (event) => {
+    for (const element of paletteSquares) {
+      element.classList.remove('selected');
+    }
+    event.target.classList.add('selected');
+  });
+});
