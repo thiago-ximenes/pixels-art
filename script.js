@@ -7,7 +7,9 @@ const sizeButton = document.getElementById('generate-board');
 
 paletteSquares[0].classList.add('selected');
 
-// Douglas, amigo meu, me ajudou
+// Pedi ajuda por Discord do meu amigo Douglas Oliveira para resolver questão de for dentro de uma function
+// GitHub: https://github.com/dg-os
+// Linkedin: https://www.linkedin.com/in/douglas-oliveira-5a03b5b9/
 paletteSquares.forEach((item) => {
   item.addEventListener('click', (event) => {
     paletteSquares.forEach((element) => {
@@ -32,12 +34,14 @@ pixel.forEach((item) => {
   });
 });
 
-pixel.forEach((item) => {
-  button.addEventListener('click', () => {
+function clearPixel() {
+  pixel.forEach((item) => {
     const element = item;
     element.style.backgroundColor = 'white';
   });
-});
+}
+
+button.addEventListener('click', clearPixel);
 
 sizeButton.addEventListener('click', () => {
   if (input.value === '') {
@@ -49,6 +53,7 @@ sizeButton.addEventListener('click', () => {
     if (sizeInt >= 5 && sizeInt <= 50) {
       moment.style.width = `${input.value}px`;
       moment.style.height = `${input.value}px`;
+      clearPixel();
     }
   });
 });
