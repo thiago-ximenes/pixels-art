@@ -29,8 +29,9 @@ pixel.forEach((item) => {
   });
 });
 
-button.addEventListener('click', () => {
-  for (let item of pixel) {
-    item.style.backgroundColor = 'white';
-  }
+pixel.forEach((item) => {
+  button.addEventListener('click', () => {
+    const element = item;
+    element.style.backgroundColor = 'white';
+  });
 });
