@@ -3,6 +3,7 @@ const pixelBoard = document.getElementById('pixel-board');
 const button = document.getElementById('clear-board');
 const input = document.getElementById('board-size');
 const sizeButton = document.getElementById('generate-board');
+let pixel = '';
 
 function generateColor() {
   const color = [
@@ -45,11 +46,11 @@ function generateBoard(size = 5) {
       liPixels.addEventListener('click', paintSquare);
     }
   }
+  pixel = document.querySelectorAll('.pixel');
 }
 
 generateBoard();
 
-const pixel = document.querySelectorAll('.pixel');
 // Pedi ajuda por Discord do meu amigo Douglas Oliveira para resolver questão de for dentro de uma function
 // GitHub: https://github.com/dg-os
 // Linkedin: https://www.linkedin.com/in/douglas-oliveira-5a03b5b9/
@@ -72,8 +73,6 @@ function clearPixel() {
     element.style.backgroundColor = 'white';
   });
 }
-
-button.addEventListener('click', clearPixel);
 
 function clearBoard() {
   pixel.forEach(() => {
@@ -103,3 +102,5 @@ sizeButton.addEventListener('click', () => {
     generateBoard(sizeErrorValue(sizeInt));
   }
 });
+
+button.addEventListener('click', clearPixel);
