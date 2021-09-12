@@ -16,7 +16,9 @@
     <div class="color" id='yellow'></div>
   </div>
   <button type="button" id="clear-board">Limpar</button>
-  <input type="text" id='board-size' placeholder="Insira um tamanho entre 5 e 50">
+  <!-- https://www.w3schools.com/tags/tag_input.asp -->
+  <!-- https://stackoverflow.com/questions/43785821/html5-validation-check-input-bigger-than-0 -->
+  <input type="number" id='board-size' placeholder="Insira um tamanho entre 5 e 50" min="1">
   <button type="button" id="generate-board">VQV</button>
 
   <div id="pixel-board">

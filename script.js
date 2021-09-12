@@ -39,10 +39,16 @@ pixel.forEach((item) => {
   });
 });
 
-pixel.forEach((item) => {
-  sizeButton.addEventListener('click', () => {
+sizeButton.addEventListener('click', () => {
+  if (input.value === '') {
+    alert('Board inválido!');
+  }
+  pixel.forEach((item) => {
     const moment = item;
-    moment.style.width = `${input.value}px`;
-    moment.style.height = `${input.value}px`;
+    const sizeInt = parseInt(input.value, 0);
+    if (sizeInt >= 5 && sizeInt <= 50) {
+      moment.style.width = `${input.value}px`;
+      moment.style.height = `${input.value}px`;
+    }
   });
 });
