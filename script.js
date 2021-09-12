@@ -1,16 +1,16 @@
 const paletteSquares = document.querySelectorAll('.color');
 const pixel = document.querySelectorAll('.pixel');
 const colors = ['black', '#297373', '#ff8552', '#e9d758'];
+const button = document.getElementById('clear-board');
 
 paletteSquares[0].classList.add('selected');
 
 paletteSquares.forEach((item) => {
   item.addEventListener('click', (event) => {
-    for (const element of paletteSquares) {
+    for (let element of paletteSquares) {
       element.classList.remove('selected');
     }
     event.target.classList.add('selected');
-    document.querySelector('.selected').style.backgroundColor = event.target.style.backgroundColor;
   });
 });
 
@@ -27,4 +27,10 @@ pixel.forEach((item) => {
       }
     }
   });
+});
+
+button.addEventListener('click', () => {
+  for (let item of pixel) {
+    item.style.backgroundColor = 'white';
+  }
 });
