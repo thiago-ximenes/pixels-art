@@ -1,9 +1,26 @@
 const paletteSquares = document.querySelectorAll('.color');
 const pixelBoard = document.getElementById('pixel-board');
-const colors = ['black', '#297373', '#ff8552', '#e9d758'];
 const button = document.getElementById('clear-board');
 const input = document.getElementById('board-size');
 const sizeButton = document.getElementById('generate-board');
+
+function generateColor() {
+  const color = [
+    Math.floor(Math.random() * 256),
+    Math.floor(Math.random() * 256),
+    Math.floor(Math.random() * 256),
+  ];
+  let colorGenerated = 'rgb(';
+  for (let index = 0; index < color.length - 1; index += 1) {
+    colorGenerated += `${color[index]},`;
+  }
+  // link: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/at
+  // usei essa referência para pegar o último item do array mas o Cypher ficou doido e não considerou como certo
+  colorGenerated += `${color[color.length - 1]})`;
+  return colorGenerated;
+}
+
+const colors = ['black', generateColor(), generateColor(), generateColor()];
 
 paletteSquares[0].classList.add('selected');
 
