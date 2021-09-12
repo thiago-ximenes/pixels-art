@@ -7,7 +7,7 @@ paletteSquares[0].classList.add('selected');
 
 paletteSquares.forEach((item) => {
   item.addEventListener('click', (event) => {
-    for (let element of paletteSquares) {
+    for (const element of paletteSquares) {
       element.classList.remove('selected');
     }
     event.target.classList.add('selected');
